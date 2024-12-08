@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marrfa-Assignment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-logo">My Blog</div>
+        <ul class="navbar-links">
+            <li><a href="https://pandeysaksham21s.vercel.app/" target="_blank">Portfolio</a></li>
+            <li><a href="https://github.com/Saksham21s" target="_blank">GitHub</a></li>
+            <li><a href="https://leetcode.com/u/saksham21s/" target="_blank">LeetCode</a></li>
+            <li><a href="https://www.linkedin.com/in/saksham-pandey21/" target="_blank">Linkedin</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Explore Blogs</h1>
+        <div class="search-container">
+            <input type="text" id="searchBox" placeholder="Search blogs..." oninput="filterCards()">
+            <ul id="suggestions" class="suggestions-box"></ul>
+        </div>
+        
+        <!-- Results Section -->
+        <div id="results" class="card-container"></div>
+
+        <!-- Pagination Buttons -->
+        <div class="pagination">
+            <button id="prevBtn" onclick="prevPage()">Previous</button>
+            <button id="nextBtn" onclick="nextPage()">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

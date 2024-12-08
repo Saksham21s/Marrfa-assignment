@@ -1,0 +1,238 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f8f9fa, #74b9ff);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    padding: 10px 20px; /* Adjusted padding for better mobile fit */
+    background: #0984e3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo */
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    flex-shrink: 0; /* Prevents logo from shrinking */
+}
+
+/* Links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* Allows links to wrap if necessary on smaller screens */
+    gap: 10px; /* Reduced gap for compact alignment */
+    justify-content: flex-end; /* Align links to the right */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    display: inline-block;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.navbar-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-links {
+        flex-wrap: nowrap; /* Prevent wrapping for smaller screens */
+        overflow-x: auto; /* Allow horizontal scrolling if content exceeds width */
+        gap: 5px; /* Reduced gap for smaller screens */
+    }
+
+    .navbar-links li a {
+        font-size: 0.9rem; /* Slightly smaller font size */
+        padding: 5px 8px; /* Compact padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 8px 10px; /* Minimal padding for very small screens */
+    }
+
+    .navbar-logo {
+        font-size: 1.2rem; /* Smaller logo for compact screens */
+    }
+
+    .navbar-links {
+        gap: 3px; /* Minimal gap for tight alignment */
+    }
+
+    .navbar-links li a {
+        font-size: 0.85rem; /* Smaller font for very small screens */
+        padding: 4px 6px; /* Compact padding */
+    }
+}
+
+
+/* Main Container Styles */
+.container {
+    margin-top: 80px;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Input Field */
+#searchBox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: #e9ecef;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* Cards Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Single column by default */
+    gap: 20px; /* Moderate gap between cards */
+    justify-content: center;
+}
+
+.card {
+    padding: 0;
+    border-radius: 12px;
+    background: #fff;
+    color: #333;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Fixed height for consistency */
+    width: 90%; /* Card takes up most of the row width */
+    margin: 0 auto;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 15px;
+    font-size: 1.2rem;
+    color: #0984e3;
+}
+
+.card p {
+    margin: 0 15px 15px;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.card a {
+    display: block;
+    margin: 0 auto 15px;
+    width: 100px;
+    padding: 10px;
+    background: #0984e3;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.card a:hover {
+    background: #0652DD;
+}
+
+/* Pagination Buttons */
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #0984e3;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.pagination button:hover {
+    background: #0652DD;
+}
+
+#prevBtn:disabled, #nextBtn:disabled {
+    background: #d1d8e0;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+        gap: 15px;
+    }
+
+    .card {
+        width: 90%; /* Adjusted for grid layout */
+    }
+}
+
+@media (min-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on large screens */
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%; /* Fill the grid */
+    }
+}
